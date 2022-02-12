@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/GothamPro.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/GothamPro-Italic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/GothamPro-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Gotham Pro";
+    src: url("fonts/GothamPro-BoldItalic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+@font-face {
+    font-family: "PT Serif"; 
+    src: url("fonts/PTSerif.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "PT Serif";
+    src: url("fonts/PTSerif-Italic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "PT Serif";
+    src: url("fonts/PTSerif-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "PT Serif";
+    src: url("fonts/PTSerif-BoldItalic.ttf") format("truetype");
+    font-style: italic;
+    font-weight: bold;
+}

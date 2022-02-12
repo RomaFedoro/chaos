@@ -1,0 +1,242 @@
+@import "fonts.css";
+
+:root {
+    --light-gray: rgb(214, 214, 214);
+    --gray: rgb(190, 190, 190);
+    --black: rgb(62, 62, 62);
+    --red: rgb(255, 53, 53);
+    --yellow: rgb(244, 255, 121);
+    --light-blue: rgb(146, 207, 241);
+    --blue: rgb(1, 136, 212);
+    --purple: rgb(149, 58, 145);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: none;
+    background: none;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    color: var(--black);
+    font-family: 'Gotham Pro';
+}
+
+.wrapper {
+    width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.records-container {
+    width: 100%;
+    margin: 72px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+}
+
+.record {
+    height: 308px;
+    padding: 32px;
+    border: 1px solid var(--light-gray);
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: .1s;
+    user-select: none;
+}
+
+.record_active, .record:hover {
+    border: 1px solid var(--gray);
+}
+
+.record__header, .record__footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.record__name {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.record__date {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--gray);
+}
+
+.main-button {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: 1px solid var(--black);
+    color: var(--black);
+    border-radius: 100px;
+    user-select: none;
+    cursor: pointer;
+    transition: .1s;
+}
+
+.record__btn-open {
+    opacity: 0;
+}
+
+.record_folder {
+    background-color: var(--light-gray);
+}
+
+.record_folder .record__date {
+    color: var(--black);
+}
+
+.record__btn-setting {
+    width: 28px;
+    height: 28px;
+    background-size: 28px;
+    background-image: url(../image/setting.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    opacity: .6;
+    transition: .1s;
+}
+
+.record_active .record__btn-open,
+.record:hover .record__btn-open {
+    opacity: .6;
+}
+
+.record_active .record__btn-open:active,
+.record:hover .record__btn-open:active,
+.record__btn-setting:hover,
+.record_active .record__btn-setting {
+    opacity: 1;
+}
+
+
+/* Record Page CSS */
+
+.record-container {
+    width: 100%;
+    margin: 72px 0;
+}
+
+.title-block, .header-block {
+    width: 764px;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 44px;
+    color: black;
+    padding-bottom: 40px;
+}
+
+.header-block {
+    font-size: 28px;
+    line-height: 36px;
+    padding-top: 36px;
+    padding-bottom: 12px;
+}
+
+.text-container, .list-container {
+    display: grid;
+    grid-template-columns: 764px 164px;
+    grid-column-gap: 32px;
+    padding: 12px 0;
+}
+
+.text-block {
+    font-family: "PT Serif";
+    font-size: 20px;
+    line-height: 30px;
+    color: black;
+}
+
+.comment-block {
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 4px;
+}
+
+.quote-block {
+    font-family: "PT Serif";
+    width: 870px;
+    font-size: 36px;
+    line-height: 52px;
+    color: black;
+    padding: 24px 0;
+}
+
+.list-block {
+    font-family: "PT Serif";
+    display: grid;
+    grid-row-gap: 12px;
+    font-size: 20px;
+    line-height: 30px;
+    color: black;
+}
+
+.list-block li {
+    margin-left: 52px;
+    padding-left: 12px;
+}
+
+.small-header {
+    font-family: "Gotham Pro";
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* Text Styles */
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.text-selection {
+    background-color: var(--yellow);
+}
+
+a {
+    color: var(--blue);
+    outline: none;
+    text-decoration: none;
+    border-bottom: 0.8px dashed var(--light-blue);
+    transition: .1s;
+}
+
+a:hover {
+    border-color: var(--blue);
+}
+
+a:active {
+    color: var(--red);
+    border-color: var(--red);
+}
+
+a:visited {
+    color: var(--purple);
+    border-color: var(--purple);
+}
