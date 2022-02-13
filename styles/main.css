@@ -1,7 +1,7 @@
 @import "fonts.css";
 
 :root {
-    --light-gray: rgb(214, 214, 214);
+    --light-gray: rgb(232, 232, 232);
     --gray: rgb(190, 190, 190);
     --black: rgb(62, 62, 62);
     --red: rgb(255, 53, 53);
@@ -33,7 +33,7 @@ body {
 }
 
 .wrapper {
-    width: 960px;
+    width: 1060px;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -42,7 +42,7 @@ body {
 
 .records-container {
     width: 100%;
-    margin: 72px 0;
+    margin: 72px 50px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 24px;
@@ -150,6 +150,8 @@ body {
     line-height: 44px;
     color: black;
     padding-bottom: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .header-block {
@@ -159,11 +161,12 @@ body {
     padding-bottom: 12px;
 }
 
-.text-container, .list-container {
+.text-container, .list-container, .photo-container {
     display: grid;
     grid-template-columns: 764px 164px;
     grid-column-gap: 32px;
-    padding: 12px 0;
+    padding: 12px 50px;
+    position: relative;
 }
 
 .text-block {
@@ -173,7 +176,7 @@ body {
     color: black;
 }
 
-.comment-block {
+.comment-block, .photo-description {
     font-size: 12px;
     line-height: 18px;
     margin-top: 4px;
@@ -185,7 +188,7 @@ body {
     font-size: 36px;
     line-height: 52px;
     color: black;
-    padding: 24px 0;
+    padding: 24px 50px;
 }
 
 .list-block {
@@ -206,6 +209,200 @@ body {
     font-family: "Gotham Pro";
     font-weight: bold;
     font-size: 18px;
+}
+
+.photo-container {
+    padding: 24px 50px;
+}
+
+.photo-block {
+    width: 764px;
+    position: relative;
+}
+
+.vertical-photo {
+    width: 576px;
+}
+
+.photo-block__content {
+    display: flex;
+    position: relative;
+    background-color: var(--light-gray);
+    overflow: hidden;
+}
+
+.photo-content__backgr {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: blur(20px);
+    background-image: url(https://cms.enjourney.ru/upload/Jana/Hawaii/ha1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .6;
+    z-index: 0;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
+    z-index: 1;
+}
+
+.photo-block__footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.photo-description {
+    flex: 1;
+    max-width: 576px;
+    margin-top: 0;
+}
+
+.btn-photo-delete {
+    font-family: "Gotham Pro";
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--red);
+    width: max-content;
+    cursor: pointer;
+    user-select: none;
+    transition: .1s;
+}
+
+.btn-photo-delete:hover {
+    font-weight: bold;
+}
+
+.photo-block__footer .btn-photo-delete {
+    margin-left: 24px;
+}
+
+.photo-count {
+    font-family: "Gotham Pro";
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.btn-photo-switch {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.btn-photo-switch_prev {
+    left: 0;
+}
+
+.btn-photo-switch_follow {
+    right: 0;
+}
+
+.photo-block__gallery {
+    margin-top: 20px;
+    width: 576px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 64px);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.gallery-block {
+    width: 64px;
+    height: 64px;
+    background-color: var(--light-gray);
+    position: relative;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .1s;
+}
+
+.gallery-block_active::before {
+    content: "";
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    border: 2px solid var(--red);
+    box-sizing: border-box;
+}
+
+.gallery-block_btn-add {
+    background-size: 16px;
+    background-image: url(../image/add.svg);
+}
+
+.gallery-block_btn-add:active {
+    background-color: var(--gray);
+}
+
+.btn {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--light-gray);
+    transition: .1s;
+    opacity: 0;
+}
+
+.editing-block:hover > .btn {
+    opacity: 1;
+}
+
+.btn_add {
+    background-image: url(../image/add.svg);
+    background-size: 10px;
+}
+
+.btn_add:active {
+    background-color: var(--gray);
+}
+
+.placeholder {
+    font-weight: bold;
+    font-size: 110%;
+    color: rgb(214, 214, 214);
+    opacity: 0;
+    transition: .1s;
+}
+
+.editing-block:hover > .placeholder {
+    opacity: 1;
+}
+
+.editing-block:hover > .comment-block > .placeholder {
+    opacity: 0;
+}
+
+.editing-block:hover > .comment-block > .placeholder_start-comment {
+    opacity: 1;
+}
+
+.comment-block:hover > .placeholder {
+    opacity: 1 !important;
+}
+
+.placeholder_start-text, .placeholder_start-header {
+    opacity: 1;
 }
 
 
